@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+</head>
+<body>
+<h1>Order</h1>
+<div class="row">
+    <div th:each="orderItem : ${OrderItemList}" class="col-md-4 my-1">
+        <table>
+            <tr>
+                <td></td>Illustration:</td>
+                <td><img th:src="${orderItem.illustration}" class="card-img-top" /></td>
+            </tr>
+            <tr>
+                <td>Title:</td>
+                <td> <p th:text= "${orderItem.title}"></p></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td> <p th:text= "${orderItem.description}"></p></td>
+            </tr>
+            <tr>
+                <td>Quantity:</td>
+                <td><p th:text= "${orderItem.quantity}"></p></td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td><p th:text= "${orderItem.price}"></p></td>
+            </tr>
+        </table>
+    </div>
+    <h3>PriceTotal:</h3>
+    <p th:text= "${OrderItemListPrice}"></p>
+    <input type="submit" th:value="Payer"/></br>
+</div>
+</div>
+</body>
+</html>

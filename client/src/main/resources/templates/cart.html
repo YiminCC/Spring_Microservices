@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+</head>
+<body>
+<div class="container">
+  <h1>Cart</h1>
+  <div class="row">
+      <form method="post" th:action="@{|/addCart/1/cart/1|}" class="form-group">
+          <div th:each="cartItem : ${cartItemBeanList}" class="col-md-4 my-1">
+              <table>
+                  <tr>
+                      <td></td>Illustration:</td>
+                      <td><img th:src="${cartItem.illustration}" class="card-img-top" /></td>
+                  </tr>
+                  <tr>
+                      <td>Title:</td>
+                      <td> <p th:text= "${cartItem.title}"></p></td>
+                  </tr>
+                  <tr>
+                      <td>Description:</td>
+                      <td> <p th:text= "${cartItem.description}"></p></td>
+                  </tr>
+                  <tr>
+                      <td>Price:</td>
+                      <td><p th:text= "${cartItem.price}"></p></td>
+                  </tr>
+                  <tr>
+                      <td>Quantity:</td>
+                      <td><p th:text= "${cartItem.quantity}"></p></td>
+                  </tr>
+              </table>
+          </div>
+          <input type="submit" th:value="Ajouter"/></dr>
+      </form>
+  </div>
+</div>
+
+</body>
+</html>

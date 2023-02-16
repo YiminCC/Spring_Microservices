@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>product-detail</title>
+</head>
+<body>
+    <div class="container">
+        <h1 th:text="${product.title}"></h1>
+        <div class="row">
+            <div  class="col-md-4 my-1">
+                <form method="post" th:action="@{|/addProduct/1/product/${product.id}|}" class="form-group">
+                    <table>
+                        <tr>
+                            <td></td>Illustration:</td>
+                            <td><img th:src="${product.illustration}" class="card-img-top" /></td>
+                        </tr>
+                        <tr>
+                            <td>Title:</td>
+                            <td><p th:text= "${product.title}"></p></td>
+                        </tr>
+                        <tr>
+                            <td>Description:</td>
+                            <td><p th:text= "${product.description}"></p></td>
+                        </tr>
+                        <tr>
+                            <td>Price:</td>
+                            <td><p th:text= "${product.price}"></p></td>
+                        </tr>
+                        <tr>
+                            <td>Quantity:</td>
+                            <td> <input type="text", th:name="quantity"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" th:value="Ajouter"/></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
